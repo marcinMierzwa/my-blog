@@ -1,0 +1,32 @@
+<ul class="list-unstyled">
+  @if(skills){ @for (skill of skills; track skill.id) {
+  <li>
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            [attr.data-bs-target]="'#' + skill.attrText"
+            aria-expanded="true"
+            [attr.aria-controls]="skill.attrText"
+          >
+           <div><img [src]="skill.logo" [alt]="'logo'+ skill.name"></div> 
+          <span>{{ skill.name }}</span>
+          </button>
+        </h2>
+        <div [id]="skill.attrText" class="accordion-collapse collapse show">
+          <ul class="list-unstyled">
+            @for (link of skill.links; track $index) {
+            <li>
+              <a href="">{{ link }}</a>
+            </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
+  }}
+</ul>
