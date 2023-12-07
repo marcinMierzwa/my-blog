@@ -9,22 +9,41 @@ import { AccordionModel } from '../../models/accordion-model';
   styleUrl: './accordion.component.scss'
 })
 export class AccordionComponent {
-  areaText = "panelsStayOpen-collapseTwo";
-  skills:AccordionModel[] = [
+  skills: AccordionModel[] = [
     {
     id:1,
     name: "Angular",
-    logo: "./assets/angular-favicon.ico",
+    logo: "./assets/angular-logo.png",
     attrText: "panelsStayOpen-collapseOne",
-    links: ["input", "output", "property binding"]
+    links: ["input", "output", "property binding"],
+    main: [
+      {
+      topic: "Input",
+      updated: "",
+      description: "",
+      officialDocs: "",
+      images: ["url", "url"],
+    },
+  ]
   },
   {
     id:2,
     name: "JavaScript",
     logo: "./assets/js-logo.jpg",
     attrText: "panelsStayOpen-collapseTwo",
-    links: ["map", "reduce", "async await"]
+    links: ["map", "reduce", "async await"],
+    main: [
+      {
+      topic: "Input",
+      updated: "",
+      description: "",
+      officialDocs: "",
+      images: ["url", "url"],
+    },
+  ]
+
   },
+  
 
 ]
 }
