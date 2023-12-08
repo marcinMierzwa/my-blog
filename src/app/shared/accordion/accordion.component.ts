@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { AccordionModel } from '../../models/accordion-model';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-accordion',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './accordion.component.html',
   styleUrl: './accordion.component.scss'
 })

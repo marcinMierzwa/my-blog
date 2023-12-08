@@ -5,22 +5,28 @@
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button
-            class="accordion-button"
+            class="accordion-button collapsed"
             type="button"
             data-bs-toggle="collapse"
             [attr.data-bs-target]="'#' + skill.attrText"
             aria-expanded="true"
             [attr.aria-controls]="skill.attrText"
           >
-           <div class="w-25"><img [src]="skill.logo" [alt]="'logo'+ skill.name" class="img-fluid"></div> 
-          <span>{{ skill.name }}</span>
+            <div class="w-25">
+              <img
+                [src]="skill.logo"
+                [alt]="'logo' + skill.name"
+                class="img-fluid"
+              />
+            </div>
+            <span>{{ skill.name }}</span>
           </button>
         </h2>
-        <div [id]="skill.attrText" class="accordion-collapse collapse show">
+        <div [id]="skill.attrText" class="accordion-collapse collapse">
           <ul class="list-unstyled">
             @for (link of skill.links; track $index) {
             <li>
-              <a href="">{{ link }}</a>
+              <a routerLink = "test" >{{ link }}</a>
             </li>
             }
           </ul>
@@ -30,3 +36,4 @@
   </li>
   }}
 </ul>
+

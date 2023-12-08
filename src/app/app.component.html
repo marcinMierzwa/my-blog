@@ -1,6 +1,16 @@
-<div class="container-fluid w-75">
+<div class="container-fluid d-flex flex-column w-75 p-0">
   <app-navbar />
-  <app-header-top/>
-  <app-header-bottom/>
-  <app-main/>
+  <app-header-top />
+  <app-header-bottom />
+  <div class=" d-flex justify-content-between p-0 w-100">
+    <div class="w-25">
+      <app-side-bar-left />
+    </div>
+    <div class="w-50 border border-dark bg-info-subtle">
+      <router-outlet />
+    </div>
+    <div class="w-25 bg-success-subtle border">
+      <app-side-bar-right />
+    </div>
+  </div>
 </div>
