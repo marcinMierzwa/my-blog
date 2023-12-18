@@ -1,0 +1,48 @@
+{
+  "skillsList": [
+    {
+      "id": 1,
+      "name": "Angular",
+      "logo": "./assets/angular-logo.png",
+      "attrText": "panelsStayOpen-collapseOne",
+      "content": [
+        {
+          "topic": "input",
+          "updated": "",
+          "description": "",
+          "officialDocs": "",
+          "images": ["url", "url"]
+        },
+        {
+          "topic": "output",
+          "updated": "",
+          "description": "",
+          "officialDocs": "",
+          "images": ["url", "url"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "JavaScript",
+      "logo": "./assets/js-logo.jpg",
+      "attrText": "panelsStayOpen-collapseTwo",
+      "content": [
+        {
+          "topic": "map",
+          "updated": "",
+          "description": "",
+          "officialDocs": "",
+          "images": ["url", "url"]
+        },
+        {
+          "topic": "reduce",
+          "updated": "",
+          "description": "",
+          "officialDocs": "",
+          "images": ["url", "url"]
+        }
+      ]
+    }
+  ]
+}

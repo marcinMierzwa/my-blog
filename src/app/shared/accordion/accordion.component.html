@@ -19,14 +19,14 @@
                 class="img-fluid"
               />
             </div>
-            <span>{{ skill.name }}</span>
+            <span>{{ skill.name }} </span>
           </button>
         </h2>
         <div [id]="skill.attrText" class="accordion-collapse collapse">
           <ul class="list-unstyled">
-            @for (link of skill.links; track $index) {
+            @for (link of skill.content; track $index) {
             <li>
-              <a routerLink = "test" >{{ link }}</a>
+              <a routerLink = "test" >{{ link.topic }} {{ $index }}</a>
             </li>
             }
           </ul>

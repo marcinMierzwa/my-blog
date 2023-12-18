@@ -1,50 +1,31 @@
-import { Component } from '@angular/core';
-import { AccordionModel } from '../../models/accordion-model';
+import { Component, inject } from '@angular/core';
+import { SkillModel } from '../../models/skill-model';
 import { RouterLink } from '@angular/router';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-accordion',
   standalone: true,
   imports: [RouterLink],
   templateUrl: './accordion.component.html',
-  styleUrl: './accordion.component.scss'
+  styleUrl: './accordion.component.scss',
 })
 export class AccordionComponent {
-  skills: AccordionModel[] = [
-    {
-    id:1,
-    name: "Angular",
-    logo: "./assets/angular-logo.png",
-    attrText: "panelsStayOpen-collapseOne",
-    links: ["input", "output", "property binding"],
-    main: [
-      {
-      topic: "Input",
-      updated: "",
-      description: "",
-      officialDocs: "",
-      images: ["url", "url"],
-    },
-  ]
-  },
-  {
-    id:2,
-    name: "JavaScript",
-    logo: "./assets/js-logo.jpg",
-    attrText: "panelsStayOpen-collapseTwo",
-    links: ["map", "reduce", "async await"],
-    main: [
-      {
-      topic: "Input",
-      updated: "",
-      description: "",
-      officialDocs: "",
-      images: ["url", "url"],
-    },
-  ]
+  skills!: SkillModel[];
+  dataService: DataService = inject(DataService);
 
-  },
-  
-
-]
+  constructor() {
+    this.dataService.fetchData()    
+    .subscribe({
+      next: (result) => {
+        this.skills = result;
+      },
+      error: () => {
+        console.log('fetching error');
+      },
+      complete: () => {
+        console.log('fetching finished');
+      },
+    });
+  }
 }
